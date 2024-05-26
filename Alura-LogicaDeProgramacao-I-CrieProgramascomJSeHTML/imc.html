@@ -1,0 +1,43 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    function calculaImc(peso,altura) {
+        var imc = peso / (altura * altura);
+        mostra("O IMC calculado é " + imc);
+    }
+
+
+    //funcao com retorno
+    function calculaImcRetorno(peso,altura) {
+        var imc = peso / (altura*altura);
+        return imc;
+        //pode ser direto tbm como: return peso / (altura*altura);
+    }
+
+    var pesoR = 90;
+    var alturaR = 1.92;
+    var imcR = calculaImcRetorno(pesoR,alturaR);
+    mostra("O imc de R é " + imcR);
+
+    //calcular imc: oferecendo dados
+    var peso1 = 80;
+    var altura1 = 1.72;
+    calculaImc(peso1,altura1);
+    
+
+
+</script>

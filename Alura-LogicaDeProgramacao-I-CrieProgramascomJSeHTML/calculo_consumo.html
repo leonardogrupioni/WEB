@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+
+<h3>Álcool ou Gasolina?</h3>
+
+<script>
+
+    //criando funcao em JS
+    function pulaLinha(){ //use nomes q tenham sentido bem claro
+        document.write("<br>");
+    }
+
+
+    //criando a função mostra()
+
+    function mostra(conteudo){ //conteudo serve como uma variavel de passagem de parametros
+        
+        document.write(conteudo);
+        //para ja pular a linha pode acessar a funcao de pular a linha
+        pulaLinha();
+    }
+
+
+    var puloLinha = "<br>"; //variavel para pular linha
+
+    var tanque = 40;
+
+    var caminhoComGasolina = 480;
+    var consumoDeGasolina = caminhoComGasolina/tanque;
+
+    var caminhoComAlcool = 300;
+    var consumoDeAlcool = caminhoComAlcool/tanque;
+
+    //document.write("O consumo de Gasolina é " + consumoDeGasolina + " km/L");
+
+    mostra("O consumo de Gasolina é " + consumoDeGasolina + " km/L");
+
+    document.write("<br>"); //pode ser substituido por uma variavel como:
+    document.write(puloLinha); //porem ainda pode melhorar trocando o document.write por uma funcao
+    pulaLinha(); //os 3 fazem a mesma coisa, porem o idel é usar funcoes para facilitar a escrita, leitura e manutencao.
+
+    document.write("O consumo de Álcool é " + consumoDeAlcool + " km/L");
+
+    //funcoes podem ou nao conter passagem de parametros
+
+</script>

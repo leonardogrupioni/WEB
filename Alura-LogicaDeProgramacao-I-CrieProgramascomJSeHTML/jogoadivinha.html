@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var numeroSecreto = Math.round(Math.random() * 10);
+    console.log(numeroSecreto);//manda o numero aleatorio para o console do navegador
+
+    var chute = parseInt(prompt("Qual o seu chute:"));
+
+    if(chute == numeroSecreto){
+        mostra("Voce acertou!");
+    } else {
+        mostra("Voce errou, o numero pensando foi " + numeroSecreto);
+    } 
+
+</script>
