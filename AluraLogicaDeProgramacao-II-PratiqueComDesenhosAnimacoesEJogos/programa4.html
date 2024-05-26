@@ -1,0 +1,65 @@
+<meta charset="UTF-8">
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'white';
+    pincel.fillRect(0,0,600,400);
+
+    function desenhaCirculo(x,y,raio){
+
+        pincel.fillStyle = 'blue';
+        pincel.beginPath();
+        pincel.arc(x,y,raio,0,2*Math.PI); //= eixos centrais nas posicoes (x,y), raio(tamanho do raio da circunferencia), angulo inicial, angulo final(por ser sirculo 2*pi)
+        pincel.fill();
+    }
+
+    function limpaTela(){
+        pincel.clearRect(0,0,600,400);
+    }
+    
+    /*
+    for(var x = 20; x < 600; x++){
+        
+        limpaTela();
+        desenhaCirculo(x,20,10,);
+
+    }*/ //for nao aceita a repeticao devagar
+
+    /*
+    function exibeMsgConsole(){
+        console.log('Chamei funcao');
+    }
+
+    //funcao do JS, setInterval para criar intervalos  entre funcoes
+
+    setInterval(exibeMsgConsole, 1000); //funcao setInterval, recebe uma funcao e envia a execucao dela de ms em ms de acordo com a segunda virgula (funcao, tempo de repeticao)
+    */
+
+
+    var x = 20;
+    var sentido = 1;
+    function atualizaTela(){
+        
+        limpaTela();
+
+        if(x > 600){
+            sentido = -1
+        } else if(x < 0){
+            sentido = 1;
+        }
+        desenhaCirculo(x, 20, 10);
+        x = x + sentido;
+    
+    }
+
+    setInterval(atualizaTela,10);
+
+    
+
+
+</script>

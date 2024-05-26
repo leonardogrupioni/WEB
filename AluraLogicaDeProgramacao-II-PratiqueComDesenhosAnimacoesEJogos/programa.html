@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+
+<!--canvas: area da tela que pode ser usada para desenhar na tela ou escrever na tela-->
+<canvas width="600" height="400" ></canvas> <!--tem que colocar o tamanho do quadro que podera ser usado-->
+
+<script>
+    //desenhar com o html/JS usando tag canvas
+    //atribuindo o canvas a variavel tela
+    var tela = document.querySelector('canvas');
+    //criando o pincel para pintar na tela, acessando a variavel tela e selecionando o tipo de pincel, no caso 2d
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'lightgrey';//fillStyle nn é uma funcao, é como uma variavel que aceita uma propriedade
+    //é necessario posicionar o pincel na tela com os eixos XY
+    //atribuindo ao pincel a funcao de pintar o retangulo
+    pincel.fillRect(0,0,600,400); //preencha um retangulo de posicoes x1 = 0 e y1 = 0 ate x2 = 600 e y2 = 400
+    
+    pincel.fillStyle = 'green';
+    pincel.fillRect(0,0,200,400);
+    pincel.fillStyle = 'white';
+    pincel.fillRect(200,0,200,400);
+    pincel.fillStyle = 'red';
+    pincel.fillRect(400,0,600,400);
+
+    //para criar um trinagulo se usa um caminho, ou seja um percurso diferente do retangulo
+    pincel.fillStyle = 'yellow';
+    pincel.beginPath();
+    pincel.moveTo(300,200);
+    pincel.lineTo(200,400);
+    pincel.lineTo(400,400);
+    pincel.fill();
+    //é preciso iniciar o pincel em uma posicao com o moveTo, em seguida mover ele ate um ponto, depois outro ponto e enfim prencher com o fill
+
+    //criando uma bola/circunferencia
+    pincel.fillStyle = 'blue';
+    pincel.beginPath();
+    pincel.arc(300,200,50,0,2*3.14); //criando a circunferencia, 300 e 200 como x e y centrais, 50 como raio, e 2xPi para prencher o circulo comprar
+    pincel.fill(); //prencher o circulo
+
+</script>
